@@ -1,0 +1,424 @@
+
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
+
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}  
+
+
+\sloppy
+
+\title{A Multidimensional Framework for Municipal e-Government Digital Maturity Assessment}
+
+\author{Laura Elisa Bordinhon Brandão\inst{1}, Lucas Brembati Weizenmann\inst{1}, Luana Tavares Santos\inst{1}, \\ Lucas Rocha Bariani\inst{1}, Wellynton Diniz \inst{1}, Jean Zahn\inst{1}}
+
+\address{Department of Computer Engineering -- Faculdade de Tecnologia de Sinop (FASTECH)\\
+    Estrada Claudete 442a -- 91.501-970 -- Sinop -- MT -- Brazil
+  \email{\{lbrandao, lweizenmann, ltavares, lbariani, wdiniz,  jzahn\}@enc.fastech.edu.br}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+ \textbf{Research Context:}
+ \textit{Digital transformation has expanded the role of municipal e-government in delivering public services, transparency, participation, communication, and citizen interaction. However, the existence of digital channels alone does not indicate the maturity of a local digital government ecosystem.}
+ \textbf{Scientific and/or Practical Problem:}  
+ \textit{Municipalities lack a unified, evidence-based, and comparable instrument for assessing e-Gov digital maturity across multiple dimensions, combining institutional, technological, service, accessibility, participation, and citizen-oriented aspects.}
+ \textbf{Proposed Solution and/or Analysis:}  
+ \textit{This study proposes a multidimensional Framework for Evaluating e-Gov Digital Maturity, composed of ten dimensions: Digital Presence, Ombudsman Services, Organizational Structure, Transparency, Communication Channels, Participation, Service Digitalization, Digital Accessibility, Citizen Satisfaction, and Interoperability, Open Data, and Security. The framework produces a composite Municipal Digital Maturity Index and classifies municipalities into five maturity levels.}
+ \textbf{Related IS Theory: }  
+ \textit{The framework is grounded in e-government maturity and digital government assessment approaches, particularly the UN e-Government Survey logic for online service and e-participation maturity, complemented by Brazilian public-sector transparency, accessibility, and service regulations.}
+ \textbf{Research Method:} 
+ \textit{The study adopts a multi-method evaluation protocol combining structured checklists, secondary public data, automated web collection, accessibility auditing, and, where feasible, natural language processing. The instrument will be piloted, refined, and applied to the 142 municipalities of Mato Grosso.}
+ \textbf{Summary of Results:} 
+ \textit{The current stage defines the framework's dimensions, indicators, data collection strategies, weighting structure, and a five-level maturity scale, establishing the foundation for its large-scale empirical application and subsequent validation.}
+ \textbf{Contributions and Impact to IS area:} 
+ \textit{The study contributes a replicable and scalable instrument for evaluating municipal digital government maturity and supports comparative analysis, longitudinal monitoring, and evidence-based improvement of public-sector Information Systems.}
+ 
+\end{abstract}
+     
+%\begin{resumo} 
+
+ %\textbf{Contexto da Pesquisa:}
+ %\textit{A transformação digital ampliou o papel do governo eletrônico municipal na oferta de serviços públicos, transparência, participação, comunicação e interação com o cidadão. Entretanto, a simples existência de canais digitais não indica, por si só, a maturidade do ecossistema de governo digital local.}
+ %\textbf{Problema Científico e/ou Prático:}  
+ %\textit{Os municípios carecem de um instrumento unificado, baseado em evidências e comparável para avaliar a maturidade digital do e-Gov em múltiplas dimensões, combinando aspectos institucionais, tecnológicos, de serviços, acessibilidade, participação e orientação ao cidadão.}
+ %\textbf{Solução e/ou Análise Proposta:} 
+ %\textit{Este estudo propõe um Framework de Avaliação da Maturidade Digital e-Gov multidimensional, composto por dez dimensões: Presença Digital, Ouvidoria, Estrutura Organizacional, Transparência, Canais de Comunicação, Participação, Digitalização de Serviços, Acessibilidade Digital, Satisfação do Cidadão e Interoperabilidade, Dados Abertos e Segurança. O framework produz um Índice de Maturidade Digital Municipal composto e classifica os municípios em cinco níveis de maturidade.}
+ %\textbf{Teoria de SI Relacionada:} 
+% \textit{O framework fundamenta-se em abordagens de maturidade de governo eletrônico e avaliação de governo digital, especialmente na lógica do UN E-Government Survey para maturidade de serviços online e participação eletrônica, complementada por normas e referências brasileiras relacionadas à transparência, acessibilidade e prestação de serviços públicos.}
+ %\textbf{Método de Pesquisa:}  
+ %\textit{O estudo adota um protocolo de avaliação multimétodo, combinando checklists estruturados, dados públicos secundários, coleta automatizada na web, auditoria de acessibilidade e, quando viável, técnicas de processamento de linguagem natural. O instrumento será submetido a um estudo piloto, refinado e posteriormente aplicado aos 142 municípios de Mato Grosso.}
+ %\textbf{Síntese dos Resultados:} 
+ %\textit{A etapa atual define as dimensões do framework, os indicadores, as estratégias de coleta, a estrutura de pesos e uma escala de maturidade composta por cinco níveis, estabelecendo a base para sua aplicação empírica em larga escala e posterior validação.}
+ %\textbf{Contribuições e Impacto para a Área de SI:} 
+ %\textit{O estudo contribui com um instrumento replicável e escalável para avaliação da maturidade do governo digital municipal, apoiando análises comparativas, monitoramento longitudinal e melhorias dos Sistemas de Informação do setor público baseadas em evidências.}
+ 
+%\end{resumo}
+
+
+\section{Introdução}
+
+
+A transformação digital das administrações públicas ampliou as formas de prestação de serviços e de relacionamento entre governos e cidadãos. Apesar da expansão de portais, plataformas transacionais e canais de participação, sua simples disponibilidade não demonstra que os serviços sejam acessíveis, integrados, responsivos ou efetivamente utilizados. O UN E-Government Survey 2024 ressalta a persistência de diferenças entre o desenvolvimento de serviços eletrônicos nacionais e locais, avaliando a oferta municipal por meio do Local Online Services Index (LOSI) \cite{un2024egovernment}. O GovTech Maturity Index 2025, por sua vez, reconhece quatro áreas complementares sistemas centrais, serviços públicos digitais, engajamento e fatores habilitadores, mas tem como unidade principal de análise as economias nacionais [World Bank 2025].
+    
+A comparação no nível municipal exige maior granularidade. Governos locais de um mesmo estado podem compartilhar obrigações legais, mas diferir quanto à capacidade administrativa, infraestrutura, canais de interação, cobertura dos serviços e mecanismos de avaliação do usuário. Na literatura recente, a revisão de \cite{david2023understanding} identifica a interdependência entre pessoas, processos e tecnologia na adoção digital municipal, enquanto \cite{toleikiene2025assessing} e \cite{mkhitaryan2026digital} oferecem evidências empíricas de que dimensões institucionais e de serviços precisam ser examinadas na escala local. No Brasil, \cite{vieira2026modelos} identificam diversidade de modelos de maturidade e a ausência de um instrumento consolidado para todo o setor público.
+
+No estado de Mato Grosso há 142 municípios sendo Boa Esperança o município mais recente [IBGE 2025; SES-MT 2025]. Para a análise estadual, indicadores nacionais de transparência, acessibilidade e governo digital precisam ser convertidos em critérios verificáveis nas páginas das prefeituras, portais vinculados, documentos públicos e, quando disponível, registros administrativos. A atualização da Estratégia Nacional de Governo Digital (ENGD) em 2026 reforça a atuação interfederativa, a inclusão, o compartilhamento seguro de dados e a participação como componentes da modernização governamental \cite{brasil2026portaria5395}.
+
+Diante desse cenário, a questão de pesquisa é: como construir e operacionalizar um instrumento multidimensional, editável e replicável que permita avaliar a maturidade digital do governo municipal, sem reduzir a análise à existência de um portal ou à publicação de dados? O objetivo geral é propor um framework e um Índice de Maturidade Digital Municipal (IMDM) aplicáveis aos 142 municípios de Mato Grosso. Especificamente, pretende-se definir dimensões e indicadores, identificar fontes de evidência, estabelecer regras de normalização e agregação, realizar um estudo-piloto e especificar um protocolo de validação que permita comparações espaciais e reaplicações temporais. A contribuição pretendida é metodológica e instrumental: articular dimensões já discutidas em estudos recentes com indicadores verificáveis na escala municipal brasileira. A pesquisa é apresentada no estágio de design e desenvolvimento do artefato; foi realizada uma demonstração experimental em três municípios, enquanto a aplicação integral e a validação do índice permanecem previstas para etapas posteriores.
+
+%\Uma demonstração preliminar foi conduzida em três municípios para comprovação de conceito, ficando a aplicação abrangente e a validação empírica do índice programadas para etapas subsequentes.%\
+
+\section{Background Material}
+
+\subsection{Governo digital e modelos de maturidade}
+
+A maturidade digital no setor público não se limita à disponibilidade de páginas eletrônicas. Envolve a capacidade de organizar processos, disponibilizar serviços, permitir a participação dos cidadãos e integrar sistemas de informação. Em um modelo de estágios, \cite{layneLee2001} descrevem uma trajetória que parte da catalogação de informações, avança para transações eletrônicas e alcança formas de integração vertical e horizontal.
+
+Essa perspectiva oferece uma referência para avaliar a digitalização dos serviços, mas não esgota aspectos como acessibilidade, estrutura institucional e responsividade dos canais digitais. O UN E-Government Survey 2024 examina o desenvolvimento do governo eletrônico em escala nacional e também apresenta o Local Online Services Index (LOSI), destinado à análise de portais de cidades. A edição de 2024 assinala diferenças persistentes entre o desenvolvimento de serviços eletrônicos nacionais e locais \cite{un2024egovernment}. Por sua vez, o GovTech Maturity Index (GTMI) de 2025 organiza a avaliação em quatro áreas: sistemas centrais e infraestrutura digital compartilhada, prestação de serviços públicos on-line, engajamento digital e fatores habilitadores [World Bank 2025]. Esses instrumentos evidenciam a utilidade de abordagens multidimensionais, embora suas unidades de análise, coberturas e procedimentos não coincidam com os requisitos de uma avaliação censitária dos municípios mato-grossenses.
+
+A elaboração de um índice composto requer decisões explícitas sobre a definição dos indicadores, o tratamento de dados ausentes, a normalização, a atribuição de pesos e a agregação. O guia metodológico da OCDE e do Centro Comum de Investigação da Comissão Europeia recomenda documentar essas escolhas e examinar a robustez dos resultados diante de diferentes pressupostos \cite{oecd2008}. No presente trabalho, as dez dimensões constituem componentes do fenômeno avaliado. Por isso, a concordância entre avaliadores no uso dos indicadores e a justificativa dos pesos propostos são etapas distintas da validação do Índice de Maturidade Digital Municipal (IMDM).
+
+\subsection{Avaliação de portais municipais no contexto brasileiro}
+
+A avaliação municipal precisa considerar, simultaneamente, a prestação de serviços digitais e as obrigações de transparência e atendimento ao cidadão. A Lei nº 12.527/2011 disciplina o acesso à informação pública; a Lei nº 13.460/2017 dispõe sobre a participação, a proteção e a defesa dos direitos dos usuários de serviços públicos; e a Lei nº 14.129/2021 estabelece princípios e instrumentos para o Governo Digital e o aumento da eficiência pública \cite{brasil2011lei12527, brasil2017lei13460, brasil2021lei14129}. A Estratégia Nacional de Governo Digital para 2024–2027, instituída pelo Decreto nº 12.069/2024 e revisada em 2026, reforça a articulação entre entes federativos, a inclusão e a melhoria dos serviços públicos digitais \cite{brasil2024decreto12069, brasil2026portaria5395}.
+
+Esses marcos permitem derivar perguntas verificáveis sobre portais e canais municipais: há um meio eletrônico para solicitar informações? O cidadão consegue registrar manifestações? Os prazos e os responsáveis estão identificados? Os serviços podem ser concluídos digitalmente? A verificação deve distinguir a publicação de um link da efetiva funcionalidade do serviço. Da mesma forma, informações ausentes, inacessíveis ou hospedadas em sistemas externos não devem ser automaticamente interpretadas como inexistência do serviço, sem que o protocolo estabeleça previamente uma regra para esses casos.
+
+A acessibilidade digital constitui outra dimensão relevante. As diretrizes WCAG 2.2 fornecem critérios verificáveis para conteúdo web, enquanto o Modelo de Acessibilidade em Governo Eletrônico (eMAG) adapta recomendações de acessibilidade ao contexto brasileiro [World Wide Web Consortium 2024; Brasil. Governo Digital s.d.]. A auditoria automatizada pode identificar parte das barreiras técnicas, mas não substitui todas as verificações manuais, especialmente as relacionadas à navegação e ao entendimento do conteúdo. Por sua vez, eventuais avaliações públicas ou comentários em redes sociais podem fornecer sinais exploratórios de satisfação, mas não equivalem a uma amostra representativa dos usuários dos serviços municipais.
+
+\section{Trabalhos relacionados}
+A literatura fornece modelos de estágios, índices comparativos e estudos sobre fatores de adoção digital. O modelo de Layne e Lee (2001) descreve uma progressão da catalogação à integração vertical e horizontal, útil para estruturar a dimensão de digitalização dos serviços. A revisão de David et al. (2023) identifica fatores associados a pessoas, processos e tecnologia, mas não propõe um protocolo único de pontuação de portais mato-grossenses. O levantamento de Vieira e Pinheiro (2026) também evidencia a diversidade dos modelos de maturidade usados no setor público.
+
+Entre os instrumentos de avaliação, o \textit{UN E-Government Survey 2024} inclui o \textit{Local Online Services Index} (LOSI), que examina portais urbanos e considera conteúdo, serviços e participação [United Nations 2024]. O \textit{GovTech Maturity Index} (GTMI) 2025 do Banco Mundial reúne sistemas centrais e infraestrutura compartilhada, serviços digitais, engajamento dos cidadãos e fatores habilitadores, usando como unidade principal as economias nacionais [World Bank 2025]. Esses instrumentos já contemplam componentes relevantes à presente proposta; a distinção pretendida não decorre de introduzir, isoladamente, acessibilidade ou interoperabilidade, mas de definir critérios e evidências replicáveis para os governos municipais estudados.
+
+Na escala local, Toleikienė et al. (2025) investigam inter-relações entre estratégia, servidores e processos no contexto da resiliência municipal. Mkhitaryan et al. (2026) aplicam um índice composto a onze municípios armênios, articulando serviços, eficiência administrativa, transparência e participação. Tais trabalhos demonstram que a avaliação municipal multidimensional já possui precedentes. Neste artigo, o recorte distintivo é a operacionalização de um instrumento observacional que combina portais municipais e legislação brasileira, documentação de evidências e um protocolo de aplicação comum a municípios do mesmo estado.
+
+\begin{table}[htbp]
+\centering\small
+\caption*{Quadro 1 -- Síntese das abordagens utilizadas na delimitação do framework}
+\begin{tabular}{L{3.15cm}L{4.75cm}L{5.12cm}}
+\toprule
+\textbf{Fonte} & \textbf{Ênfase} & \textbf{Relação com este trabalho} \\ \midrule
+Layne e Lee (2001) & Estágios de desenvolvimento do governo eletrônico. & Base para a digitalização de serviços (D7). \\
+ONU (2024), LOSI & Análise de serviços e participação em portais de cidades. & Referência de avaliação local; abrangência e critérios não equivalem ao censo estadual proposto. \\
+Banco Mundial (2025), GTMI & Quatro áreas de GovTech em escala nacional. & Sustenta a avaliação multidimensional, mas requer adaptação de evidências à escala municipal. \\
+Toleikienė et al. (2025) & Estratégia, servidores e processos em governos locais. & Subsídio para os componentes institucionais. \\
+Mkhitaryan et al. (2026) & Índice em onze municípios armênios. & Precedente empírico municipal; difere no contexto legal e no protocolo observacional. \\
+\textbf{Este trabalho} & Dez dimensões e protocolo de evidências para municípios de MT. & Piloto de clareza em três municípios; IMDM completo em desenvolvimento. \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\section{O Framework de Avaliação}
+
+A ideia de que governos passam por estágios de maturidade digital não é nova: desde o trabalho seminal de~\cite{nolan1973} sobre estágios de crescimento em Tecnologia da Informação Organizacional, e sua adaptação por~\cite{layneLee2001} especificamente ao governo eletrônico -- que descreve a trajetória de um portal público como um movimento de catalogação de informação para transação, e desta para integração --, a literatura de Sistemas de Informação trata maturidade como algo que se desdobra em fases reconhecíveis, não como um atributo que um município simplesmente possui ou não possui. 
+
+O problema é que essa tradição teórica, ao ser operacionalizada em índices nacionais como o E-Government Survey da ONU, foi pensada para comparar países, e ao ser operacionalizada em instrumentos setoriais brasileiros como o iGovTI do Tribunal de Contas da União (TCU), foi pensada para avaliar governança de TI institucional -- nenhum dos dois se propõe a capturar o que efetivamente acontece na relação cotidiana entre uma prefeitura e o cidadão que ela atende. É exatamente nessa lacuna que o framework proposto se posiciona: não como mais um índice de maturidade genérico, mas como uma tradução dessa tradição teórica para a escala municipal.
+
+Essa tradução, contudo, não é um exercício livre de fundamentação metodológica -- ela segue o paradigma de Design Science Research descrito por~\cite{marchSmith1995} e~\cite{hevner2004}, no qual o objeto de conhecimento não é uma teoria a ser testada, mas um artefato a ser construído: um constructo (as dez dimensões), um modelo (a estrutura de agregação em índice) e um método (o protocolo de coleta). O processo de construção deste artefato segue, mais especificamente, as seis atividades propostas por~\cite{peffers2007} -- identificação do problema, definição de objetivos, design e desenvolvimento, demonstração, avaliação e comunicação, sendo esta seção dedicada precisamente à etapa de design e desenvolvimento.
+
+A constatação de que essa tradução para a escala municipal precisa lidar com uma dificuldade que os modelos de estágio clássicos não enfrentam (a maturidade digital municipal não é uma linha única de progresso), é a coexistência de várias frentes que avançam em velocidades diferentes dentro do mesmo governo. É o que leva à primeira decisão estrutural do framework: tratar maturidade não como uma variável única a ser observada, mas como um constructo formativo, na formulação de~\cite{diamantopoulosWinklhofer2001}, no qual as dimensões compõem o conceito em vez de serem manifestações de uma causa latente comum. 
+
+Isso importa, pois um município pode ter um portal de transparência exemplar e, simultaneamente, nenhum mecanismo real de participação cidadã, sem que isso seja uma inconsistência do índice. É, portanto, a própria evidência de que estamos diante de um fenômeno multifacetado, exatamente o comportamento que a literatura de constructos formativos prevê.
+
+\subsection{Por onde a maturidade se revela}
+
+Se a maturidade é multidimensional, se faz necessário entender quais dimensões e em que ordem elas se revelam e como conseguimos capturar esta maturidade. A resposta que o framework adota segue uma lógica de camadas concêntricas, cada uma pressupondo a anterior. A camada elementar é a própria existência de um canal digital de comunicação, um site que funciona, responde, é seguro e atualizado~\cite{zahn2024mapping}. Sem essa condição mínima, nenhuma outra dimensão pode sequer ser avaliada; por isso a Presença Digital funciona, no framework, como uma espécie de porta de entrada, não como um diferencial de maturidade em si.
+
+Uma vez garantida essa porta de entrada, se faz necessário mudar o entendimento sobre se o governo está presente digitalmente para o que esse canal permite ao cidadão fazer. A primeira resposta institucionalizada a essa pergunta, no ordenamento jurídico brasileiro, é a ouvidoria: a Lei nº 13.460/2017 não deixa margem para que a existência de um canal de manifestação do cidadão seja tratada como boa prática opcional. O mesmo raciocínio de obrigação normativa, mas relativo à informação em vez de à manifestação, leva à Transparência, ancorada na Lei de Acesso à Informação e na metodologia já testada da Escala Brasil Transparente da Controladoria Geral da União (CGU). Entre essas duas dimensões, insere-se a Estrutura Organizacional: sem essa camada, a comunicação institucional carece de rastreabilidade.
+
+Cada uma dessas quatro dimensões, ao ser operacionalizada, foi decomposta em indicadores binários ou ordinais e não em escalas subjetivas contínuas, seguindo o princípio de que escalas subjetivas introduzem variância entre avaliadores que não é variância no fenômeno medido, mas ruído do próprio instrumento, o problema clássico de confiabilidade interavaliadores discutido por~\cite{devellis2016} na tradição de desenvolvimento de escalas. Um indicador binário é verificável por qualquer avaliador com o mesmo resultado -- pré-condição tanto para reprodutibilidade científica quanto para automação.
+
+Neste ponto, o framework se desloca de ''o que o governo disponibiliza´´ para ''o que o cidadão consegue fazer com isso´´, o que justifica a introdução dos Canais de Comunicação e da Participação como dimensões distintas. A Participação, em particular, é tratada aqui não como categoria binária, mas como um continuum que vai da informação à consulta e desta à decisão — gradação emprestada diretamente do E-Participation Index das Nações Unidas, que evita o erro comum de equiparar uma simples caixa de sugestões a um orçamento participativo digital. A última dimensão dessa primeira leva, a Digitalização de Serviços, retoma explicitamente a lógica de estágios de Layne e Lee (2001) — catalogação, transação, integração vertical, integração horizontal.
+
+\textbf{Por que ir além do que os instrumentos existentes já cobrem}
+
+Até aqui, o framework poderia ser descrito como uma síntese cuidadosa de instrumentos já consagrados. Mas uma síntese que apenas reorganiza o que já existe não constitui, por si, uma contribuição nova. É neste ponto que entram as três dimensões que distinguem este framework de seus antecedentes, e cada uma responde a uma pergunta que os instrumentos revisados simplesmente não fazem.
+
+A primeira pergunta ausente é: o site é utilizável por todos? A Acessibilidade Digital, avaliada segundo WCAG e sua adaptação brasileira, o eMAG, preenche essa lacuna como critério técnico auditável por ferramenta automatizada. A segunda pergunta ausente é: o cidadão está, de fato, satisfeito? A saída que o framework adota — tratar avaliações públicas do Google e comentários em redes sociais como proxy de satisfação via processamento de linguagem natural — é uma aproximação experimental, tratada como tal. A terceira pergunta ausente é: os sistemas conversam entre si? É essa fragmentação que a dimensão de Interoperabilidade, Dados Abertos e Segurança busca capturar, retomando o conceito de "sistemas centrais de governo" do GovTech Maturity Index do Banco Mundial.
+
+A atribuição de um método de coleta distinto a cada dimensão — checklist manual para umas, scraping automatizado para outras, processamento de linguagem natural para a satisfação — não é uma escolha de conveniência, mas a aplicação do princípio de triangulação metodológica de Denzin (1978): usar múltiplos métodos para que o viés específico de um método (por exemplo, o viés de desejabilidade social presente em questionários autorrelatados, como os que iGovTI, INMSD e o Mapa de Governo Digital utilizam) seja mitigado pela presença de outros métodos que não compartilham essa mesma limitação.
+
+\textbf{Da soma das partes a uma leitura única}
+
+Reunidas essas dez dimensões, o framework enfrenta sua última decisão de enredo: como transformar dez medidas distintas em algo que um gestor público, sem formação em metodologia de pesquisa, consiga interpretar num único olhar. É essa necessidade prática que justifica a agregação das dimensões num Índice de Maturidade Digital Municipal único, por meio de uma soma ponderada. Essa escolha segue o que o Handbook on Constructing Composite Indicators da OECD (2008) descreve como um modelo de agregação compensatório — em oposição a modelos não-compensatórios, do tipo outranking, que penalizam desempenho muito baixo em qualquer dimensão isolada mesmo com médias altas —, e essa escolha carrega uma limitação que se declara aqui com honestidade acadêmica: o modelo compensatório assume implicitamente que um déficit de Participação pode ser compensado por excesso de Presença Digital, o que é discutível normativamente.
+
+Os pesos atribuídos a cada dimensão nesta etapa são, por isso, tratados como hipótese e não como resultado. Atribuir pesos por julgamento dos pesquisadores sem processo estruturado é uma fragilidade comum em índices compostos amadores; por isso, o framework se compromete a validar esses pesos por meio do Analytic Hierarchy Process de Saaty (1980), que formaliza a comparação pareada de critérios por especialistas com razão de consistência auditável, ou por meio do método Delphi de Dalkey e Helmer (1963), que formaliza a convergência de julgamento especializado por rodadas iterativas anônimas — dois métodos consolidados havendo mais de sessenta anos de uso na literatura de decisão multicritério, e que serão aplicados após o piloto, quando já houver dado real para orientar a ponderação.
+
+A escolha de cinco faixas de maturidade, e não de uma escala contínua exposta em pontos, deriva da mesma tradição de modelos de estágio que abriu esta seção: assim como Layne e Lee (2001) descreveram o amadurecimento de um portal em fases nomeadas e reconhecíveis, e assim como o próprio Capability Maturity Model de Paulk et al. (1993) consolidou essa lógica de estágios nomeados para maturidade de processos de software — uma tradição que precede e influencia diretamente os modelos de maturidade em governo eletrônico —, o IMDM devolve ao leitor não um número, mas um estágio: algo que se pode comparar entre municípios, e acompanhar ao longo do tempo, dentro do mesmo município, à medida que o observatório for reaplicado.
+
+\subsection{Operacionalização e agregação do IMDM: protocolo proposto}
+Para tornar o framework reproduzível, a unidade observacional é o município, considerando site oficial da prefeitura, portais vinculados, serviços terceirizados oficialmente indicados e documentos normativos publicamente disponíveis. Cada evidência deverá registrar município, indicador, URL, data e hora de acesso, fonte, categoria atribuída, justificativa e identificação do avaliador. No caso de sistemas externos, a associação oficial ao município deve ser documentada. A simples existência de um link não deve ser confundida com a funcionalidade do serviço.
+
+As dez dimensões permanecem como escopo conceitual do framework. O piloto aqui relatado contemplou 31 perguntas manuais das dimensões D1 a D7 e D10; D8 e D9 ainda não possuem dados coletados. O Quadro 2 resume o estado operacional das dimensões, sem apresentar os componentes planejados como se já estivessem validados.
+
+\begin{table}[htbp]\centering\footnotesize
+\caption*{Quadro 2 -- Dimensões, instrumentos e situação na etapa atual}
+\begin{tabular}{L{1.1cm}L{4.5cm}L{4.0cm}L{3.6cm}}\toprule
+\textbf{Código} & \textbf{Dimensão} & \textbf{Fonte/método principal} & \textbf{Situação}\\\midrule
+D1 & Presença Digital & Portal, domínio, HTTPS, atualização & Cinco itens no piloto\\
+D2 & Ouvidoria & Canal, responsável, prazo, ato institucional & Cinco itens no piloto\\
+D3 & Estrutura Organizacional & Organograma, contatos, legislação & Quatro itens no piloto\\
+D4 & Transparência & Portal, peças legais, e-SIC & Oito itens no piloto\\
+D5 & Canais de Comunicação & Identificação de canal interativo & Um item no piloto\\
+D6 & Participação & Informação, consulta e decisão & Três itens no piloto\\
+D7 & Digitalização de Serviços & Estágio máximo observado & Um item no piloto\\
+D8 & Acessibilidade Digital & Auditoria WCAG 2.2/eMAG e inspeção manual & Prevista; sem resultados\\
+D9 & Satisfação do Cidadão & Instrumento com usuários; comentários apenas exploratórios & Prevista; sem resultados\\
+D10 & Interoperabilidade, Dados Abertos e Segurança & Dados abertos, privacidade, chatbot, login & Quatro itens no piloto; requer refinamento\\\bottomrule
+\end{tabular}\end{table}
+
+O cálculo do índice completo é apresentado como \textit{especificação preliminar a validar}, e não como resultado do piloto. Cada resposta binária verificável poderá receber 1 (atendimento) ou 0 (não atendimento). Para D1.5, a codificação proposta é 1 (até 30 dias), 2/3 (30--180 dias), 1/3 (mais de 180 dias) e 0 (sem data), registrando-se que a atualização de notícias não equivale, isoladamente, à atualização dos serviços. Para D3.4, propõem-se 1 (consistente), 0,5 (parcialmente consistente) e 0 (não consistente). Para D7.1, a normalização prevista é o estágio observado dividido por 4. A codificação de D8 e D9 permanece pendente da definição e validação dos respectivos instrumentos.
+
+Seja $x_{m,d,j}\in[0,1]$ a pontuação verificável do indicador $j$ da dimensão $d$ no município $m$. A pontuação dimensional e o índice são definidos, provisoriamente, por:
+\begin{equation}
+ S_{m,d}=\frac{\sum_{j\in V_{m,d}}x_{m,d,j}}{|V_{m,d}|},\qquad
+ \mathrm{IMDM}_{m}=100\sum_{d=1}^{10}w_d S_{m,d},\qquad \sum_{d=1}^{10} w_d=1.
+\end{equation}
+Aqui, $V_{m,d}$ corresponde aos indicadores efetivamente verificáveis de uma dimensão. A ausência de evidência, um link temporariamente inacessível e a inexistência confirmada de serviço devem ser registrados separadamente: respostas ``não foi possível verificar'' não recebem automaticamente nota zero. O relatório deverá divulgar a cobertura $|V_{m,d}|/N_d$ de cada dimensão; a regra mínima de completude para comparar municípios será fixada antes da aplicação integral. Não se calcula o IMDM quando D8 ou D9 não foram medidas, para evitar apresentar um índice parcial como completo.
+
+Na primeira simulação futura, pesos iguais ($w_d=0{,}10$) podem servir de linha de base, sem constituírem pesos validados. O AHP ou o Delphi, com especialistas de perfis definidos, poderá fundamentar uma ponderação alternativa; análises de sensibilidade deverão comparar pesos iguais, pesos de especialistas e cenários que reduzam a compensação entre dimensões. Para testar a implementação computacional, definem-se cinco faixas \emph{provisórias}: Inicial ($0\leq\mathrm{IMDM}<20$), Básica ($20\leq\mathrm{IMDM}<40$), Intermediária ($40\leq\mathrm{IMDM}<60$), Avançada ($60\leq\mathrm{IMDM}<80$) e Integrada ($80\leq\mathrm{IMDM}\leq100$). Os intervalos iguais constituem uma convenção operacional para a futura implementação, não pontos de corte empiricamente validados. Antes de atribuir níveis aos municípios, deverão ser avaliados por especialistas e por análises de sensibilidade; este artigo não calcula nem apresenta níveis municipais.
+
+D1 funciona como etapa de localização da evidência digital, sem anular automaticamente outras dimensões caso a página principal esteja inacessível e o município mantenha portais oficiais vinculados. A D10 também exige cautela: política de privacidade não comprova conformidade integral à LGPD, e login único não demonstra integração de dados. Após o piloto, D10.3 (chatbot) poderá ser analisado junto a D5, e D10.4 deverá ser diferenciado da integração entre sistemas descrita no estágio 4 de D7.1. Essas decisões serão documentadas antes da coleta censitária.
+
+Para a D8, propõe-se selecionar previamente páginas equivalentes de cada município, como página inicial, Ouvidoria, e-SIC e um serviço transacional quando existente. A avaliação combinará verificação automatizada dos critérios aplicáveis da WCAG 2.2 e do eMAG com inspeção manual de navegação por teclado, rotulagem de formulários e compreensão do conteúdo. Para a D9, dados de atendimento ou questionário com usuários, quando acessíveis, constituirão a medida principal; comentários públicos poderão ser usados apenas como sinal exploratório, com registro de viés de seleção e de disponibilidade desigual entre municípios. Como candidatos iniciais à operacionalização, D8 poderá incluir verificações de navegação por teclado, identificação de rótulos em formulários e barreiras detectadas por ferramenta de acessibilidade em páginas predefinidas; D9 poderá registrar a existência de pesquisas recentes com usuários e a proporção de satisfação apenas quando houver método, período, tamanho de amostra e denominador documentados. Esses indicadores candidatos exigem manual e teste-piloto próprios. Não há resultados dessas duas dimensões na etapa presente.
+
+  
+\section{Resultados e discussões}
+
+Considerando o objetivo de realizar uma avaliação preliminar da clareza dos indicadores manuais, foi aplicado um questionário contendo questões fechadas correspondentes aos indicadores do framework e questões abertas destinadas à identificação de dificuldades de interpretação. Os participantes foram pedidos para responder às perguntas fechadas a partir das informações disponíveis nos portais dos municípios selecionados, dessa forma, simulando a aplicação do framework. Se um indicador é suficientemente claro para diferentes avaliadores, espera-se que eles consigam interpretá-lo e aplicá-lo de maneira semelhante; portanto, neste estudo, a dispersão das respostas obtidas foram utilizadas para verificar o grau de concordância quanto à interpretação e à aplicação dos indicadores, usado para interpretar a clareza de um indicador.
+
+Com o objetivo de reduzir a influência de características específicas dos portais municipais sobre os resultados, foram selecionados três municípios de portes diferentes (Cuaibá-MT, Sinop-MT e Vera-MT) como alvos da simulação do framework.
+
+Não foi empregada uma técnica de amostragem probabilística; os participantes foram selecionados por conveniência, a partir da disponibilidade e acessibilidade. Assim, os resultados obtidos não têm como objetivo representar estatisticamente uma população específica, mas fornecer evidências preliminares sobre a clareza e a aplicabilidade dos indicadores.
+
+Para analisar a distribuição das respostas aos indicadores, foi adotado o Variation Ratio, considerando-se a natureza categórica ("Sim" e "Não", por exemplo) das variáveis e o interesse em identificar a concentração ou dispersão das respostas dos participantes. Dessa forma, o Variation Ratio, chamado de Taxa de Dispersão (TD) nesse trabalho, foi utilizado para quantificar a discordância entre as respostas categóricas, tanto nominais quanto ordinais. Para variáveis ordinais, a medida não utiliza a informação de ordem das categorias. A medida considera a proporção de respostas que não corresponde à categoria modal, permitindo avaliar o grau de concordância/discordância entre os avaliadores \cite{freeman1965}.
+
+A partir das Taxas de Dispersão calculadas individualmente para cada município, foi calculada a média das TDs para cada indicador, denominada Taxa de Dispersão Média (TD média), com o objetivo de representar o nível médio de dispersão observado nos diferentes contextos municipais. 
+
+Adicionalmente foi calculado o desvio padrão das taxas de dispersão dos municípios (DP-TD). Essa medida permite avaliar o quanto a dispersão das respostas pode variar entre os municípios, ajudando a distinguir uma divergência que ocorre de maneira semelhante nos diferentes contextos municipais de uma divergência concentrada em um município específico.
+
+As Tabelas~\ref{tab:taxas-dispersao},
+~\ref{tab:respostas-qualitativas}
+e~\ref{tab:questionario} contêm a relação
+dos dados quantitativos, as respostas dos
+dados qualitativos, coletados através da
+plataforma Google Forms, e o questionário
+elaborado, respectivamente.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Taxa de Dispersão por município,
+    média e desvio padrão por indicador}
+    \label{tab:taxas-dispersao}
+\centering
+\begingroup
+\small
+\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\shortstack[l]{Indicador} & \shortstack{TD Cuiabá\\(\%)} & \shortstack{TD Sinop\\(\%)} & \shortstack{TD Vera\\(\%)} & \shortstack{TD média\\(\%)} & \shortstack{DP-TD\\(p.p.)} \\
+\midrule
+D1.1 & 0,00 & 0,00 & 0,00 & 0,00 & 0,0 \\
+D1.2 & 0,00 & 0,00 & 0,00 & 0,00 & 0,0 \\
+D1.3 & 0,00 & 0,00 & 10,00 & 3,33 & 4,7 \\
+D1.4 & 16,70 & 0,00 & 0,00 & 5,57 & 7,9 \\
+D1.5 & 50,00 & 12,50 & 30,00 & 30,83 & 15,3 \\
+D2.1 & 0,00 & 0,00 & 0,00 & 0,00 & 0,0 \\
+D2.2 & 0,00 & 0,00 & 0,00 & 0,00 & 0,0 \\
+D2.3 & 50,00 & 25,00 & 50,00 & 41,67 & 11,8 \\
+D2.4 & 50,00 & 50,00 & 30,00 & 43,33 & 9,4 \\
+D2.5 & 50,00 & 37,50 & 40,00 & 42,50 & 5,4 \\
+D3.1 & 50,00 & 12,50 & 40,00 & 34,17 & 15,9 \\
+D3.2 & 33,30 & 25,00 & 20,00 & 26,10 & 5,5 \\
+D3.3 & 50,00 & 25,00 & 20,00 & 31,67 & 13,1 \\
+D3.4 & 50,00 & 50,00 & 50,00 & 50,00 & 0,0 \\
+D4.1 & 0,00 & 0,00 & 0,00 & 0,00 & 0,0 \\
+D4.2 & 0,00 & 25,00 & 10,00 & 11,67 & 10,3 \\
+D4.3 & 0,00 & 25,00 & 0,00 & 8,33 & 11,8 \\
+D4.4 & 16,70 & 37,50 & 10,00 & 21,40 & 11,7 \\
+D4.5 & 33,33 & 50,00 & 30,00 & 37,78 & 8,7 \\
+D4.6 & 16,70 & 12,50 & 30,00 & 19,73 & 7,5 \\
+D4.7 & 33,30 & 25,00 & 20,00 & 26,10 & 5,5 \\
+D4.8 & 33,30 & 25,00 & 50,00 & 36,10 & 10,4 \\
+D5.1 & 0,00 & 12,50 & 20,00 & 10,83 & 8,2 \\
+D6.1 & 16,70 & 0,00 & 30,00 & 15,57 & 12,3 \\
+D6.2 & 16,70 & 25,00 & 30,00 & 23,90 & 5,5 \\
+D6.3 & 33,30 & 50,00 & 50,00 & 44,43 & 7,9 \\
+D7.1 & 33,30 & 50,00 & 50,00 & 44,43 & 7,9 \\
+D10.1 & 33,30 & 12,50 & 40,00 & 28,60 & 11,7 \\
+D10.2 & 33,30 & 25,00 & 20,00 & 26,10 & 5,5 \\
+D10.3 & 16,70 & 37,50 & 20,00 & 24,73 & 9,1 \\
+D10.4 & 50,00 & 37,50 & 50,00 & 45,83 & 5,9 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{table}
+\clearpage
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{}L{0.235\textwidth}L{0.125\textwidth}L{0.575\textwidth}@{}}
+\caption{Respostas qualitativas dos avaliadores, organizadas por município}
+\label{tab:respostas-qualitativas}\\
+\toprule
+\textbf{Pergunta (resumo)} & \textbf{Município} & \textbf{Resposta registrada}\\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\small\itshape Tabela \thetable\ (continuação)}\\
+\toprule
+\textbf{Pergunta (resumo)} & \textbf{Município} & \textbf{Resposta registrada}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r@{}}{\footnotesize Continua na página seguinte}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Interpretação pouco clara & Cuiabá & D2.3 - O nome do(a) ouvidor(a) está publicado no canal oficial do município? Não sei quem é o ouvidor \\
+ & Sinop & D2.3 - O nome do(a) ouvidor(a) está publicado no canal oficial do município? Pois não sei quem é o ouvidor \\
+ & Vera & D2.3 - Não sei identificar quem seria o ouvidor. \\
+ & Vera & D2.4 - o site informa o prazo de resposta da LAI/SIC (20 dias + 10), mas não um prazo específico para as manifestações da Ouvidoria; não ficou claro se o prazo da LAI conta. D3.2 - os nomes de todos os secretários estão publicados, mas alguns aparecem sem e-mail/telefone. \\
+ & Vera & D7.1 - não entendi do que se trata essa questão. \\
+\addlinespace[4pt]\midrule
+Resposta não determinada objetivamente & Cuiabá & D2.3 - O nome do(a) ouvidor(a) está publicado no canal oficial do município? Não sei quem é o ouvidor \\
+ & Cuiabá & D:10.3 chatboot apenas em whatsapp e o D:04.6 e-sic tive muita dificuldade para encontrar no site da prefeitura \\
+ & Sinop & D2.3 - O nome do(a) ouvidor(a) está publicado no canal oficial do município? \\
+ & Vera & D3.2 Tem numero de contato das secretaria porem está na ultima pagina de contatos. \\
+ & Vera & D2.5, D3.4, D10.1 \\
+\addlinespace[4pt]\midrule
+Possível redundância entre indicadores & Cuiabá & N/A \\
+ & Sinop & N/A \\
+ & Vera & D4.6 e D4.8 se sobrepõem a D2.2 e D2.4 (no município, o SIC é operado pela própria Ouvidoria). D10.4 e o Estágio 4 de D7.1 avaliam o mesmo critério (login único). \\
+\addlinespace[4pt]\midrule
+Observações gerais & Cuiabá & N/A \\
+ & Sinop & N/A \\
+ & Vera & D2.5: a lei de criação da Ouvidoria (Lei 1.038/2013) está em site externo que não pôde ser acessado. D10.1: não há seção de dados abertos, mas algumas páginas permitem exportar em CSV. \\
+ & Vera & Acredito que as questões deve ser mais didática com uma linguagem mais fácil de ser interpretada \\
+\end{longtable}
+\endgroup
+\clearpage
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.13}
+\begin{longtable}{@{}L{0.09\textwidth}L{0.43\textwidth}L{0.32\textwidth}L{0.10\textwidth}@{}}
+\caption{Indicadores e perguntas do instrumento de coleta}
+\label{tab:questionario}\\
+\toprule
+\textbf{Código} & \textbf{Pergunta} & \textbf{Respostas possíveis} & \textbf{Tipo}\\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\small\itshape Tabela \thetable\ (continuação)}\\
+\toprule
+\textbf{Código} & \textbf{Pergunta} & \textbf{Respostas possíveis} & \textbf{Tipo}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r@{}}{\footnotesize Continua na página seguinte}\\
+\endfoot
+\bottomrule
+\endlastfoot
+D1.1 & O município possui um site oficial acessível pela internet? & \emph{Sim}, \emph{Não} e \emph{Não possível verificar} & ME \\
+D1.2 & O site oficial utiliza domínio institucional (.gov.br)? & \emph{Sim} e \emph{Não} & ME \\
+D1.3 & O site oficial apresenta layout adaptável para dispositivos móveis? & \emph{Sim} e \emph{Não} & ME \\
+D1.4 & O site oficial possui certificado SSL válido e utiliza HTTPS? & \emph{Sim} e \emph{Não} & ME \\
+D1.5 & Qual é a data da atualização mais recente identificável no site? & \emph{Menos de 30 dias}, \emph{Entre 30 e 180 dias}, \emph{Mais de 180 dias} e \emph{Não há data identificável} & ME \\
+D2.1 & Existe um link para a Ouvidoria acessível na página inicial ou em até um clique pelo menu principal? & \emph{Sim} e \emph{Não} & ME \\
+D2.2 & O município disponibiliza um canal eletrônico funcional para manifestações do cidadão? \newline\emph{Obs.:} se possível, teste. & \emph{Sim} e \emph{Não} & ME \\
+D2.3 & O nome do(a) ouvidor(a) está publicado no canal oficial do município? & \emph{Sim} e \emph{Não} & ME \\
+D2.4 & O prazo para respostas às manifestações está informado? & \emph{Sim} e \emph{Não} & ME \\
+D2.5 & A Ouvidoria está vinculada a órgão colegiado ou conselho? & \emph{Sim}, \emph{Não} e \emph{Não possível verificar} & ME \\
+D3.1 & O município disponibiliza um organograma institucional? & \emph{Sim} e \emph{Não} & ME \\
+D3.2 & Os nomes e contatos dos secretários municipais estão publicados? & \emph{Sim} e \emph{Não} & ME \\
+D3.3 & Existe uma lei ou decreto de estrutura administrativa disponível para consulta? & \emph{Sim} e \emph{Não} & ME \\
+D3.4 & A estrutura administrativa apresentada no site é consistente com a estrutura descrita na legislação disponível? & \emph{Consistente}, \emph{Parcialmente consistente}, \emph{Não consistente} e \emph{Não foi possível verificar} & ME \\
+D4.1 & O Portal da Transparência está acessível? & \emph{Sim} e \emph{Não} & ME \\
+D4.2 & Receitas e despesas estão disponíveis? & \emph{Sim} e \emph{Não} & ME \\
+D4.3 & Licitações e contratos estão disponíveis? & \emph{Sim} e \emph{Não} & ME \\
+D4.4 & Folha de pagamento/remuneração dos servidores está disponível? & \emph{Sim} e \emph{Não} & ME \\
+D4.5 & PPA, LDO e LOA estão disponíveis? & \emph{Sim} e \emph{Não} & ME \\
+D4.6 & Existe e-SIC ou canal formal para solicitação de acesso à informação? & \emph{Sim} e \emph{Não} & ME \\
+D4.7 & Existe regulamentação local da LAI disponível? & \emph{Sim} e \emph{Não} & ME \\
+D4.8 & O prazo de resposta aos pedidos de acesso à informação está informado? & \emph{Sim} e \emph{Não} & ME \\
+D5.1 & Foi possível identificar pelo menos um canal de comunicação interativo? & \emph{Sim} e \emph{Não} & ME \\
+D6.1 & O município publica informações que permitem ao cidadão acompanhar oportunidades de participação, como editais, atas ou calendário de audiências? & \emph{Sim} e \emph{Não} & ME \\
+D6.2 & Existe mecanismo online para o cidadão apresentar opinião ou contribuição sobre questões públicas? & \emph{Sim} e \emph{Não} & ME \\
+D6.3 & Existe mecanismo online no qual cidadãos participam diretamente de decisões ou da definição de prioridades públicas? & \emph{Sim} e \emph{Não} & ME \\
+D7.1 & Qual o maior estágio de digitalização de serviços observado? (Ver os critérios de D7.1 após a tabela.) & \emph{Estágio 0 - Ausente}, \emph{Estágio 1 - Emergente}, \emph{Estágio 2 - Interativo}, \emph{Estágio 3 - Transacional} e \emph{Estágio 4 - Integrado} & ME \\
+D10.1 & O município disponibiliza portal ou seção de dados abertos em formato reutilizável? & \emph{Sim} e \emph{Não} & ME \\
+D10.2 & O município disponibiliza política de privacidade ou documento relacionado à adequação à LGPD? & \emph{Sim} e \emph{Não} & ME \\
+D10.3 & O site ou sistema municipal disponibiliza assistente virtual/chatbot para atendimento? & \emph{Sim} e \emph{Não} & ME \\
+D10.4 & Existe mecanismo de login único que permite acesso a múltiplos serviços? & \emph{Sim} e \emph{Não} & ME \\
+N/A & Indique o tempo que levou para realizar a coleta: & Texto de resposta Curta & Aberta \\
+N/A & Caso tenha encontrado algum indicador cuja a interpretação não estava clara, indique o código do(s) indicador(es) e descreva a dificuldade: & Texto de resposta Longa & Aberta \\
+N/A & Caso tenha encontrado algum indicador para o qual não conseguiu determinar objetivamente se a resposta deveria ser "Sim" ou "Não", ou alguma outra alternativa apresentada, indique o código do(s) indicador(es): & Texto de resposta Longa & Aberta \\
+N/A & Caso haja um indicador que você considerou redundante ou muito semelhante a outro, indique-os & Texto de resposta Longa & Aberta \\
+N/A & Seção para observações acerca do formulário/framework: & Texto de resposta Longa & Aberta \\
+\end{longtable}
+\endgroup
+\noindent\begin{minipage}{\textwidth}
+\small
+\textbf{Critérios apresentados para D7.1:} Estágio 0 --- Ausente: nenhum serviço online, tudo presencial;
+Estágio 1 --- Emergente: site informativo, sem serviços transacionais;
+Estágio 2 --- Interativo: formulários para download, agendamento online, protocolo digital;
+Estágio 3 --- Transacional: emissão de certidões, pagamento de tributos (IPTU, taxas), abertura de processos 100\% online;
+Estágio 4 --- Integrado: integração entre secretarias/sistemas, um único login para múltiplos serviços
+(padrão gov.br), dados abertos em formato reutilizável (API/CSV).
+\par\smallskip\noindent\textbf{Tipos de resposta:} ME = múltipla escolha; Aberta = resposta descritiva.
+\end{minipage}
+
+\par
+\justifying
+
+Neste estudo, considera-se que a concordância entre os participantes constitui uma evidência de clareza do indicador, uma vez que indicadores mais claros tendem a possibilitar interpretações e aplicações semelhantes quando submetidos a diferentes avaliadores. Assim, a Taxa de Dispersão Média e o Desvio Padrão foram utilizados como medida descritiva do grau de concordância observado, servindo como evidência preliminar da clareza dos indicadores.
+
+Para fins de interpretação dos resultados, foram estabelecidas intervalos para a Taxa de Dispersão Média (TD média). Como os valores observados variaram entre 0\% e 50\%, esse intervalo foi dividido em três faixas de amplitude aproximadamente equivalente, correspondentes a diferentes níveis de concordância entre as respostas. Assim, valores de TD média entre 0\% e 16\% foram classificados como alta clareza, valores superiores a 16\% e até 33\% como clareza média, e valores superiores a 33\% como baixa clareza. Essa classificação possui carácter operacional e foi estabelecida especificamente para a análise deste estudo, não correspondendo a pontos de corte estatísticos universalmente estabelecidos.
+
+Para interpretar a variabiliidade da dispersão entre os municípios, também foram estabelecidos faixas operacionais para o DP-TD. Considerando que o maior valor observado no conjunto de dados foi de 15,9 pontos percentuais (p.p.), foram divididos em três intervalos: 0 a 5 p.p., 5 a 10 p.p. e valores superiores a 10 p.p., classificados, respectivamente, como baixa, média e alta variabilidade entre os municípios. Esses limites foram definidos especificamente para fins de interpretação dos resultados desta pesquisa e não constituem pontos de corte estatísticos universais.
+
+Consequentemente, foi calculado o desvio padrão das taxas de dispersão dos municípios (DP-TD). Essa medida permite avaliar o quanto a dispersão das respostas pode variar entre os municípios, ajudando a distinguir uma divergência que ocorre de maneira semelhante nos diferentes contextos municipais de uma divergência concentrada em um município específico. Também podemos classificar o DP-TD em faixas, tais como:
+- 0 a 5 p.p.: baixa variabilidade entre municípios;
+- Maior que 5 a 10 p.p.: variabilidade média;
+- Maior que 10 p.p.: alta variabilidade.
+Do mesmo modo, estes limites delimitados também foram baseados na distribuição dos dados coletados, em que o maior DP-TD observado foi de 15,9 p.p.
+
+A análise conjunta das duas medidas permite distinguir diferentes situações:
+
+- TD média alta + DP-TD baixo: a dispersão é alta e ocorre de maneira semelhante nos diferentes municípios. Isso fornece maior evidência de que a divergência pode estar relacionada ao próprio indicador;
+
+- TD média baixa + DP-TD baixo: as respostas são predominantemente concordantes e consistentes entre os municípios;
+
+- DP-TD alto: existe uma diferença relevante entre os municípios, isso pode indicar que fatores específicos de determinado município estão influenciando a taxa de dispersão e, possivelmente, contribuindo para a divergência, apesar de que não é possível atribuir a divergência exclusivamente ao indicador ou aos municípios.
+
+Como segunda evidência para a avaliação dos indicadores, foram consideradas as respostas obtidas nas questões qualitativas do formulário. Essas questões tiveram como finalidade complementar os resultados quantitativos, permitindo identificar as justificativas apresentadas pelos participantes para as respostas atribuídas aos indicadores. Dessa forma, as informações qualitativas foram utilizadas para contextualizar e interpretar as divergências observadas, contribuindo para identificar possíveis dificuldades relacionadas à compreensão do indicador ou à localização e interpretação das informações necessárias para sua aplicação.
+
+\section{Considerações finais}
+
+Este artigo apresentou o desenho de um framework multidimensional de avaliação da maturidade digital municipal e uma proposta preliminar de operacionalização do Índice de Maturidade Digital Municipal (IMDM). O instrumento reúne dez dimensões, buscando integrar aspectos institucionais, transparência, serviços, participação, acessibilidade e interação com o cidadão. Sua contribuição pretendida para Sistemas de Informação é combinar critérios observáveis, registro de evidências e regras comuns de coleta, permitindo futura comparação e reaplicação nos municípios de Mato Grosso.
+
+A demonstração inicial foi limitada à avaliação da clareza de 31 indicadores manuais em três municípios de portes distintos: Cuiabá, Sinop e Vera. As taxas de dispersão e os comentários dos avaliadores identificaram perguntas de interpretação mais estável e problemas específicos de redação, localização das evidências e possível sobreposição de critérios. Esses achados sustentam o refinamento do instrumento, mas não comprovam sua validade integral nem permitem inferir a maturidade dos municípios estudados.
+
+As principais limitações são a seleção por conveniência dos avaliadores, a falta de informações completas sobre o número e o treinamento dos participantes, a ausência de uma medida formal de confiabilidade interavaliadores e a não aplicação das dimensões de Acessibilidade Digital e Satisfação do Cidadão. Os pesos, as regras finais para dados não verificáveis e os limites dos cinco níveis de maturidade também permanecem sujeitos à validação. O modelo de soma ponderada pode mascarar desempenhos muito baixos em dimensões específicas; por isso, o índice deverá ser divulgado acompanhado das pontuações dimensionais e das taxas de cobertura de evidências.
+
+Como continuidade, prevê-se revisar as perguntas ambíguas, documentar um manual de codificação, repetir o piloto com avaliadores independentes, operacionalizar D8 e D9, submeter a proposta de ponderação a avaliação especializada e executar análises de sensibilidade. Somente após essas etapas será realizada a aplicação censitária planejada aos 142 municípios, acompanhada de uma visualização espacial e de um repositório de evidências que favoreçam a reprodução dos resultados e o monitoramento longitudinal. Essa agenda preserva o caráter de desenvolvimento e avaliação do artefato próprio da Design Science Research, sem antecipar resultados ainda não obtidos.
+
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\end{document}
