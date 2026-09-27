@@ -27,12 +27,24 @@
 \newblock Portaria sgd/mgi nº 5.395, de 1º de julho de 2026.
 \newblock Diário Oficial da União, Brasília, DF.
 
+\bibitem[Dalkey and Helmer 1963]{dalkeyHelmer1963}
+Dalkey, N. and Helmer, O. (1963).
+\newblock An experimental application of the {DELPHI} method to the use of
+  experts.
+\newblock {\em Management Science}, 9(3):458--467.
+
 \bibitem[David et~al. 2023]{david2023understanding}
 David, A., Yigitcanlar, T., Li, R. Y.~M., Corchado, J.~M., Cheong, P.~H.,
   Mossberger, K., and Mehmood, R. (2023).
 \newblock Understanding local government digital technology adoption
   strategies: A prisma review.
 \newblock {\em Sustainability}, 15(12):9645.
+
+\bibitem[Denzin 1978]{denzin1978}
+Denzin, N.~K. (1978).
+\newblock {\em The Research Act: A Theoretical Introduction to Sociological
+  Methods}.
+\newblock McGraw-Hill, New York, 2nd edition.
 
 \bibitem[DeVellis 2016]{devellis2016}
 DeVellis, R.~F. (2016).
@@ -50,10 +62,21 @@ Freeman, L.~C. (1965).
 \newblock {\em Elementary Applied Statistics}.
 \newblock John Wiley and Sons.
 
+\bibitem[Goodhart 1984]{goodhart1984problems}
+Goodhart, C. A.~E. (1984).
+\newblock Problems of monetary management: The uk experience.
+\newblock In {\em Monetary Theory and Practice: The UK Experience}, chapter~4,
+  pages 91--121. Macmillan, London.
+
 \bibitem[Hevner et~al. 2004]{hevner2004}
 Hevner, A.~R., March, S.~T., Park, J., and Ram, S. (2004).
 \newblock Design science in information systems research.
 \newblock {\em MIS Quarterly}, 28(1):75--105.
+
+\bibitem[{IBGE} 2025]{ibge2025municipios}
+{IBGE} (2025).
+\newblock Um país com quase seis mil municípios.
+\newblock IBGE Educa, 26 ago. 2025.
 
 \bibitem[Layne and Lee 2001]{layneLee2001}
 Layne, K. and Lee, J. (2001).
@@ -64,6 +87,13 @@ Layne, K. and Lee, J. (2001).
 March, S.~T. and Smith, G.~F. (1995).
 \newblock Design and natural science research on information technology.
 \newblock {\em Decision Support Systems}, 15(4):251--266.
+
+\bibitem[{Mato Grosso. Secretaria de Estado de Planejamento e Gestão}
+  2025]{mt2025ppa}
+{Mato Grosso. Secretaria de Estado de Planejamento e Gestão} (2025).
+\newblock Lei nº 12.785, de 16 de janeiro de 2025: Revisão anual do plano
+  plurianual para o quadriênio 2024--2027.
+\newblock Diário Oficial Eletrônico, nº 28.910, p. 474, 16 jan. 2025.
 
 \bibitem[Mkhitaryan et~al. 2026]{mkhitaryan2026digital}
 Mkhitaryan, K., Aslanyan, G., Sanamyan, A., Ordyan, A., and Harutyunyan, H.
@@ -83,11 +113,23 @@ Nolan, R.~L. (1973).
   User Guide}.
 \newblock OECD Publishing, Paris.
 
+\bibitem[Paulk et~al. 1993]{paulk1993}
+Paulk, M.~C., Curtis, B., Chrissis, M.~B., and Weber, C.~V. (1993).
+\newblock Capability maturity model for software, version 1.1.
+\newblock Technical Report CMU/SEI-93-TR-024, Software Engineering Institute,
+  Carnegie Mellon University, Pittsburgh, PA.
+
 \bibitem[Peffers et~al. 2007]{peffers2007}
 Peffers, K., Tuunanen, T., Rothenberger, M.~A., and Chatterjee, S. (2007).
 \newblock A design science research methodology for information systems
   research.
 \newblock {\em Journal of Management Information Systems}, 24(3):45--77.
+
+\bibitem[Saaty 1980]{saaty1980}
+Saaty, T.~L. (1980).
+\newblock {\em The Analytic Hierarchy Process: Planning, Priority Setting,
+  Resource Allocation}.
+\newblock McGraw-Hill, New York.
 
 \bibitem[Toleikien{\.e} et~al. 2025]{toleikiene2025assessing}
 Toleikien{\.e}, R., Butkus, M., Bartu{\v{s}}evi{\v{c}}ien{\.e}, I., and
@@ -107,6 +149,12 @@ Vieira, W. d.~O. and Pinheiro, M. M.~K. (2026).
 \newblock Modelos de maturidade em transformação digital no governo
   eletrônico: Uma revisão sistemática de literatura.
 \newblock {\em Múltiplos Olhares em Ciência da Informação}, 16:e063192.
+
+\bibitem[{World Bank} 2025]{worldbank2025gtmi}
+{World Bank} (2025).
+\newblock Govtech maturity index 2025: Tracking public sector digital
+  transformation worldwide.
+\newblock World Bank, Washington, DC.
 
 \bibitem[Zahn et~al. 2024]{zahn2024mapping}
 Zahn, J., Mour{\~a}o, E., Bernardini, F., Maciel, C., and Viterbo, J. (2024).

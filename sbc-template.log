@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.27)  27 SEP 2026 15:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.27)  27 SEP 2026 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -263,7 +263,7 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 )
 (./sbc-template.aux
 Package babel Info: 'brazil' activates 'portuges' shorthands.
-(babel)             Reported on input line 6.
+(babel)             Reported on input line 7.
 )
 \openout1 = `sbc-template.aux'.
 
@@ -378,17 +378,95 @@ Overfull \hbox (45.2087pt too wide) in paragraph at lines 31--31
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2]
+al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+[]\OT1/ptm/m/n/12 No es-tado de Mato Grosso h[]a 142 mu-nic[]^^Ppios
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+\OT1/ptm/m/n/12 sendo Boa Esperan[]a o mu-nic[]^^Ppio mais re-cente [[],
+ []
+
+
+Underfull \hbox (badness 3323) in paragraph at lines 78--79
+[]\OT1/ptm/m/n/12 ]. Para a an[]alise
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 78--79
+\OT1/ptm/m/n/12 es-ta-dual, in-di-ca-do-res na-ci-o-nais de trans-par[]encia, a
+ces-si-bi-li-dade e go-verno di-gi-
+ []
+
+
+Underfull \hbox (badness 1112) in paragraph at lines 78--79
+\OT1/ptm/m/n/12 tal pre-ci-sam ser con-ver-ti-dos em crit[]erios ve-ri-fic[]ave
+is nas p[]aginas das pre-fei-tu-ras,
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 78--79
+\OT1/ptm/m/n/12 por-tais vin-cu-la-dos, do-cu-men-tos p[]ublicos e, quando dis-
+pon[]^^Pvel, re-gis-tros ad-mi-nis-
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 78--79
+\OT1/ptm/m/n/12 tra-ti-vos. A atualiza[][]ao da Es-trat[]egia Na-ci-o-nal de Go
+-verno Di-gi-tal (ENGD) em
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 78--79
+\OT1/ptm/m/n/12 2026 refor[]a a atua[][]ao in-ter-fe-de-ra-tiva, a in-clus[]ao,
+ o com-par-ti-lha-mento se-guro
+ []
+
+
+Underfull \hbox (badness 3219) in paragraph at lines 78--79
+\OT1/ptm/m/n/12 de da-dos e a participa[][]ao como com-po-nen-tes da moderniza[
+][]ao go-ver-na-men-tal
+ []
+
+[2]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9
 6.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [3]
+)
+Underfull \hbox (badness 7012) in paragraph at lines 100--101
+[]\OT1/ptm/m/n/12 A aces-si-bi-li-dade di-gi-tal cons-ti-tui ou-tra di-mens[]ao
+ re-le-vante. As di-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+\OT1/ptm/m/n/12 re-tri-zes WCAG 2.2 for-ne-cem crit[]erios ve-ri-fic[]aveis par
+a conte[]udo web,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+\OT1/ptm/m/n/12 en-quanto o Mo-delo de Aces-si-bi-li-dade em Go-verno Eletr[]on
+ico (eMAG)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+\OT1/ptm/m/n/12 adapta recomenda[][]oes de aces-si-bi-li-dade ao con-texto bra-
+si-leiro [[],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+[]\OT1/ptm/m/n/12 ]. A au-di-to-ria
+ []
+
+[3]
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1
 11.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1phv.fd
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -428,9 +506,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 169.
+(Font)              <7> on input line 170.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 169.
+(Font)              <5> on input line 170.
 
 [8] [9] [10] [11] [12
 
@@ -441,17 +519,22 @@ ignored error: Infinite glue shrinkage found in box being split [13
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-(./sbc-template.bbl [16]) [17] (./sbc-template.aux)
+Underfull \hbox (badness 7168) in paragraph at lines 419--420
+[]\OT1/ptm/m/n/12 Uma limita[][]ao adi-ci-o-nal, di-re-ta-mente re-la-ci-o-nada
+ []a Lei de Go-odhart
+ []
+
+(./sbc-template.bbl [16] [17]) [18] (./sbc-template.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5851 strings out of 467533
- 99160 string characters out of 5419495
- 557558 words of memory out of 5000000
- 34684 multiletter control sequences out of 15000+600000
+ 5859 strings out of 467533
+ 99284 string characters out of 5419495
+ 557749 words of memory out of 5000000
+ 34692 multiletter control sequences out of 15000+600000
  655964 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,14n,79p,1250b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -470,10 +553,10 @@ f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fon
 ts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on sbc-template.pdf (17 pages, 221387 bytes).
+Output written on sbc-template.pdf (18 pages, 223653 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
